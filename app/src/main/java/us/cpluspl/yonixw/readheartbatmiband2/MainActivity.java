@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements BLEMiBand2Helper.
     BLEMiBand2Helper helper = null;
 
     TextView txtPath;
+    final BluetoothAdapter myBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +36,11 @@ public class MainActivity extends AppCompatActivity implements BLEMiBand2Helper.
         initSoundHelper();
 
         // Get save path:
-        txtPath = (TextView) findViewById(R.id.txtPath);
-        txtPath.setText( getApplicationContext().getExternalFilesDir(null).getAbsolutePath());
+        txtPath = findViewById(R.id.txtPath);
+        txtPath.setText(getApplicationContext().getExternalFilesDir(null).getAbsolutePath());
 
         // Setup Bluetooth:
-        helper.findBluetoothDevice(myBluetoothAdapter, "MI");
+        helper.findBluetoothDevice(myBluetoothAdapter, "3");
         helper.ConnectToGatt();
 
         try {
@@ -59,11 +60,9 @@ public class MainActivity extends AppCompatActivity implements BLEMiBand2Helper.
         super.onDestroy();
     }
 
-    // Like network card, connect to all devices in Bluetooth (like PC in Netowrk)
-    final BluetoothAdapter myBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
     public void btnRun(View view) {
-        helper.findBluetoothDevice(myBluetoothAdapter, "MI");
+        helper.findBluetoothDevice(myBluetoothAdapter, "3");
         helper.ConnectToGatt();
     }
 

@@ -22,7 +22,7 @@ import java.util.logging.Handler;
  * Created by YoniWas on 27/02/2017.
  */
 public class BLEMiBand2Helper {
-    public static final String TAG = "YONI-MI-2";
+    public static final String TAG = "Mi band 3";
 
     private Context myContext = null;
     private android.os.Handler myHandler = null;
@@ -51,7 +51,7 @@ public class BLEMiBand2Helper {
 //        myBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(myBluetoothAdapter.isEnabled()) {
             for (BluetoothDevice pairedDevice : myBluetoothAdapter.getBondedDevices()) {
-                if (pairedDevice.getName().contains(filter /*Like MI*/)) {
+                if (pairedDevice.getName().contains(filter)) {
                     Log.d(TAG, "\tDevice Name: " +  pairedDevice.getName());
                     Log.d(TAG, "\tDevice MAC: " + pairedDevice.getAddress());
 
