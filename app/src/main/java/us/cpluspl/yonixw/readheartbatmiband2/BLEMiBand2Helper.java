@@ -48,7 +48,7 @@ public class BLEMiBand2Helper {
     void findBluetoothDevice(BluetoothAdapter myBluetoothAdapter,
                                         String filter) {
         Log.d(TAG, "(*) Initialising Bluetooth connection for device: " + filter);
-
+//        myBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(myBluetoothAdapter.isEnabled()) {
             for (BluetoothDevice pairedDevice : myBluetoothAdapter.getBondedDevices()) {
                 if (pairedDevice.getName().contains(filter /*Like MI*/)) {

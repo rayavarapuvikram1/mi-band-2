@@ -5,7 +5,7 @@ import android.bluetooth.BluetoothGattCharacteristic;
 import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,8 +14,6 @@ import android.bluetooth.BluetoothAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements BLEMiBand2Helper.BLEAction {
